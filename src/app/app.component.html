@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>{{tiempo}}</h1>
+  
+  <div class="botones-container">
+    <button class="boton" (click)="iniciaPomodoro(5)">5 minutos</button>
+    <button class="boton" (click)="iniciaPomodoro(10)">10 Minutos</button>
+    <button class="boton" (click)="iniciaPomodoro(15)">15 Minutos</button>
+    <button class="boton" (click)="iniciaPomodoro(20)">20 Minutos</button>
+  </div>
+
+  <div class = "unBoton">
+    <button class="boton"  (click)="pausarContador();">Pausar contador</button>
+  </div>
+</div>
