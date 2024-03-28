@@ -31,3 +31,11 @@ h1{
   font-size: 120px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.black{
+  color: #000;
+}
+
+.red {
+  color: #e32727;
+}

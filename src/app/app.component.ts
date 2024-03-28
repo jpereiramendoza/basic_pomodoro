@@ -25,20 +25,43 @@ export class AppComponent {
   private mostrarContador: boolean  = false ; 
   public tiempo :string = "00:00";
 
+
+  public h1Clase: string = 'black';
+  /**
+   * Constructor de la aplicacion 
+   * Ejecutamos un suscriptor cada 1 segundo 
+   */
   constructor() {
     this.subscription = interval(1000).subscribe(() => {
       this.actualizaPomodoro();
     });
   }
 
-
+  /**
+   * Retorna el tiempo formateado en MM:SS 
+   * @param segundos numero de segundos 
+   * @returns 
+   */
   obtenerTiempoFormateado(segundos: number): string {
     return `${String(Math.floor(segundos / 60)).padStart(2, '0')}:${String(segundos % 60).padStart(2, '0')}`;
   }
 
+  /**
+   * Si se requiere pausar el contador por algun motivo 
+   */
   public pausarContador():void{
     if( this.timeMs>0)
+    {
       this.mostrarContador = !this.mostrarContador;
+      if(this.mostrarContador )
+      {
+        this.h1Clase = 'black';
+      }
+      else
+      {
+        this.h1Clase = 'red';
+      }
+    }
   }
 
   public actualizaPomodoro():void{
@@ -62,7 +85,8 @@ export class AppComponent {
 
   public iniciaPomodoro( tiempo : number):void {
     this.mostrarContador = true;
-    this.timeMs = 3;// tiempo * 60 ;
+    this.timeMs =  tiempo * 60 ;
+    this.actualizaPomodoro();
   }
   greet(event: SubmitEvent, name: string): void {
     event.preventDefault();
