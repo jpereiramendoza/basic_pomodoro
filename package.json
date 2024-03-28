@@ -1,5 +1,5 @@
 {
-  "name": "example",
+  "name": "Basic Pomodoro",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
